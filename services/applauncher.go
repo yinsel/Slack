@@ -141,7 +141,7 @@ func (f *File) SnippetCommandLine(item structs.Children) string {
 }
 func (f *File) RunApp(item structs.Children) {
 	var cmd *exec.Cmd
-	name := filepath.Base(item.Path)
+	name, _ := filepath.Abs(item.Path)
 	switch item.Type {
 	// 超链接类型
 	case "Link":

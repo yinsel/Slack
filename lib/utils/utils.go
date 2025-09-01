@@ -12,7 +12,10 @@ import (
 )
 
 func HomeDir() string {
-	s, _ := os.UserHomeDir()
+	s, err := os.Getwd()
+	if err != nil {
+		return "./"
+	}
 	return s
 }
 
